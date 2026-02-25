@@ -1,0 +1,12 @@
+flowchart TD
+  U[User submits report/block] --> R[reports table]
+  R --> C[moderation_cases table]
+  C --> Q{Admin review}
+  Q -->|No action| CLOSE[Case closed]
+  Q -->|Warn| WARN[audit_logs: warning]
+  Q -->|Ban| BAN[users_profile.is_banned=true]
+  BAN --> LOG[audit_logs: ban action]
+
+  MSG[New message] --> RULE{keyword/throttle check}
+  RULE -->|pass| DELIVER[Store message]
+  RULE -->|flag| FLAG[Create moderation case]

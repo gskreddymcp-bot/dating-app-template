@@ -1,0 +1,13 @@
+flowchart LR
+  M[Expo Mobile App] -->|supabase-js| S[(Supabase)]
+  W[Next.js Web App] -->|supabase-js| S
+  A[Next.js Admin Console] -->|service role for moderation only| S
+
+  S --> DB[(Postgres + RLS)]
+  S --> ST[(Storage: photos/selfies)]
+  S --> AUTH[(Supabase Auth)]
+  S --> EF[Edge Functions]
+
+  EF --> STRIPE[Stripe Subscriptions]
+  EF --> PUSH[Expo Push Stub]
+  EF --> EMAIL[Resend Email Stub]

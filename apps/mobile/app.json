@@ -1,0 +1,13 @@
+{
+  "expo": {
+    "name": "verified-dating-app",
+    "slug": "verified-dating-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "ios": { "supportsTablet": false },
+    "android": {},
+    "extra": {
+      "projectId": "${EXPO_PUBLIC_PROJECT_ID}"
+    }
+  }
+}
